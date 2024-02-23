@@ -1,16 +1,22 @@
 const Books = require("../models/Books");
 
+function printExecutionTime(startTime)
+{
+    const endTime = performance.now();
+    const executionTime = endTime - startTime;
+    console.log(`API call took ${executionTime} milliseconds`);
+
+}
 
 //Get All Books
 const getAllBooks = async (req, res) => {
     try {
         const data = await Books.find({});
-
         if (!data) {
             throw new Error("Empty Data");
         }
-
-        res.status(201).json(data);
+        printExecutionTime(req.startTime);
+        res.status(200).json(data);
     } catch (error) {
         res.status(500).json(error);
     }
@@ -27,7 +33,7 @@ const getBookById =  async (req, res) => {
             throw new Error("Book not found");
         }
 
-        res.status(201).json(data);
+        res.status(200).json(data);
     } catch (error) {
         res.status(500).json({ error: "Book not found" });
     }
@@ -66,7 +72,7 @@ const updateBook = async (req, res) => {
             throw new Error("Error occured while updating a book");
         }
 
-        res.status(201).json(data);
+        res.status(200).json(data);
     } catch (error) {
         res.status(500).json({error: "Error occured while updating a book"});
     }
@@ -84,7 +90,7 @@ const deleteBook = async (req, res) => {
             throw new Error("Error occured while deleting a book");
         }
 
-        res.status(201).json(data);
+        res.status(200).json(data);
     } catch (error) {
         res.status(500).json({error: "Error occured while deleting a book"});
     }

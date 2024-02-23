@@ -1,24 +1,8 @@
-require("dotenv").config();
-const cors = require("cors");
-const express = require("express");
-const connectDB = require("./connectDB");
-const Books = require("./models/Books");
-
-const app = express();
-const PORT = process.env.PORT || 8000;
-
-connectDB();
-app.use(cors());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.listen(PORT, () => {
-    console.log("Listening on PORT: " + PORT)
-});
-
-
+const express=require("express");
+const router = express.Router();
+const Books = require("../models/Books");
 //Get All Books
-app.get("/api/books", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const data = await Books.find({});
 
@@ -34,7 +18,7 @@ app.get("/api/books", async (req, res) => {
 
 
 //Get Book by Id
-app.get("/api/books/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
         const book_id = req.params.id;
         const data = await Books.findById(book_id);
@@ -51,7 +35,7 @@ app.get("/api/books/:id", async (req, res) => {
 
 
 //Create a Book
-app.post("/api/books", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
 
         const { title, description, author, published_year } = req.body;
@@ -70,7 +54,7 @@ app.post("/api/books", async (req, res) => {
 
 
 //Update a Book
-app.put("/api/books/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
     try {
         const book_id = req.params.id;
 
@@ -87,3 +71,23 @@ app.put("/api/books/:id", async (req, res) => {
         res.status(500).json({error: "Error occured while updating a book"});
     }
 });
+
+
+//Delete a Book
+router.delete("/:id", async (req, res) => {
+    try {
+        const book_id = req.params.id;
+
+        const data = await Books.findByIdAndDelete(book_id);
+
+        if (!data) {
+            throw new Error("Error occured while deleting a book");
+        }
+
+        res.status(201).json(data);
+    } catch (error) {
+        res.status(500).json({error: "Error occured while deleting a book"});
+    }
+});
+
+module.exports = router;

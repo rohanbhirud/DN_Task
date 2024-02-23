@@ -1,0 +1,72 @@
+[
+    {
+      "_id": "65d8cb5e1fc4293754ba65ef",
+      "title": "To Kill a Mockingbird",
+      "description": "Harper Lee's Pulitzer Prize-winning novel tells the story of racial injustice and the loss of innocence in the American South.",
+      "author": "Harper Lee",
+      "published_year": 1960
+    },
+    {
+      "_id": "65d8cb5e1fc4293754ba65f0",
+      "title": "1984",
+      "description": "George Orwell's dystopian masterpiece explores themes of surveillance, censorship, and totalitarianism.",
+      "author": "George Orwell",
+      "published_year": 1949
+    },
+    {
+      "_id": "65d8cb5e1fc4293754ba65f1",
+      "title": "The Great Gatsby",
+      "description": "F. Scott Fitzgerald's classic novel depicts the lavish lifestyle and moral decay of the wealthy during the Roaring Twenties.",
+      "author": "F. Scott Fitzgerald",
+      "published_year": 1925
+    },
+    {
+      "_id": "65d8cb5e1fc4293754ba65f2",
+      "title": "Moby-Dick",
+      "description": "Herman Melville's epic tale of Captain Ahab's obsessive quest for revenge against the great white whale, Moby-Dick.",
+      "author": "Herman Melville",
+      "published_year": 1851
+    },
+    {
+      "_id": "65d8cb5e1fc4293754ba65f3",
+      "title": "Pride and Prejudice",
+      "description": "Jane Austen's romantic comedy follows the tumultuous relationship between Elizabeth Bennet and Mr. Darcy in 19th-century England.",
+      "author": "Jane Austen",
+      "published_year": 1813
+    },
+    {
+      "_id": "65d8cb5e1fc4293754ba65f4",
+      "title": "The Catcher in the Rye",
+      "description": "J.D. Salinger's influential novel explores themes of alienation and teenage angst through the perspective of its protagonist, Holden Caulfield.",
+      "author": "J.D. Salinger",
+      "published_year": 1951
+    },
+    {
+      "_id": "65d8cb5e1fc4293754ba65f5",
+      "title": "Brave New World",
+      "description": "Aldous Huxley's dystopian vision of a future society where genetic engineering, psychological conditioning, and social control are rampant.",
+      "author": "Aldous Huxley",
+      "published_year": 1932
+    },
+    {
+      "_id": "65d8cb5e1fc4293754ba65f6",
+      "title": "The Lord of the Rings",
+      "description": "J.R.R. Tolkien's epic fantasy trilogy follows the quest to destroy the One Ring and defeat the Dark Lord Sauron.",
+      "author": "J.R.R. Tolkien",
+      "published_year": 1954
+    },
+    {
+      "_id": "65d8cb5e1fc4293754ba65f7",
+      "title": "Jane Eyre",
+      "description": "Charlotte Brontë's classic novel follows the experiences of its eponymous heroine as she navigates love, independence, and societal expectations.",
+      "author": "Charlotte Brontë",
+      "published_year": 1847
+    },
+    {
+      "_id": "65d8cb5e1fc4293754ba65f8",
+      "title": "The Hobbit",
+      "description": "J.R.R. Tolkien's beloved adventure novel chronicles the journey of Bilbo Baggins as he embarks on a quest to reclaim the treasure guarded by the dragon Smaug.",
+      "author": "J.R.R. Tolkien",
+      "published_year": 1937
+    }
+  ]

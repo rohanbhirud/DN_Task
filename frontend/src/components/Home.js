@@ -1,36 +1,67 @@
 import { Link } from 'react-router-dom';
+import { getAllBooks, deleteBook } from '../api/books';
+import { useState, useEffect } from 'react';
+
 
 const Home = () => {
+    const [books, setBooks] = useState([]);
+
+    const fetchBooks = () => {
+        getAllBooks().then(setBooks);
+      };
+    
+      useEffect(() => {
+        fetchBooks();
+      }, []);
+    
+      const handleDelete = (id) => {
+        deleteBook(id).then(() => {
+          fetchBooks();
+        });
+      };
+
+    console.log(books);
     return (
-        <div className="home">
-            <div className="table-responsive">
-                <div className='btn btn-primary'>
-                    <Link className='nav-link' to="/add">Add</Link>
+        <div className="home container mt-3">
+            <div className="row">
+                <div className="col">
+                    <div className='btn btn-primary mb-3'>
+                        <Link className='nav-link' to="/add">Add Book</Link>
+                    </div>
                 </div>
-                <table
-                    class="table table-primary">
-                    <thead>
-                        <tr>
-                            <th scope="col">Column 1</th>
-                            <th scope="col">Column 2</th>
-                            <th scope="col">Column 3</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="">
-                            <td scope="row">R1C1</td>
-                            <td>R1C2</td>
-                            <td>R1C3</td>
-                        </tr>
-                        <tr class="">
-                            <td scope="row">Item</td>
-                            <td>Item</td>
-                            <td>Item</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
-            
+            <div className="row">
+                <div className="col">
+                    <div className="table-responsive">
+                        <table className="table table-light">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Book title</th>
+                                    <th scope="col">Published Date</th>
+                                    <th scope="col">Author</th>
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {books.map(book => (
+                                    <tr key={book._id}>
+                                        <td>{book.title}</td>
+                                        <td>{book.published_year}</td>
+                                        <td>{book.author}</td>
+                                        <td>
+                                        <Link className="btn btn-primary" to={`/update/${book._id}`}>Update</Link>
+                                        </td>
+                                        <td>
+                                            <button className="btn btn-danger"  onClick={() => handleDelete(book._id)}>Delete</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

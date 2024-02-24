@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import CreateUpdate from './components/CreateUpdate';
+import About from './components/About';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/add" element={<CreateUpdate />} />
+          <Route path="/update/:id" element={<CreateUpdate />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         </div>
       </BrowserRouter>

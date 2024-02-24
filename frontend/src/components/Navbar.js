@@ -4,9 +4,9 @@ const Navbar = () => {
     return (
         <div>
             <nav
-                class="navbar navbar-expand-sm navbar-light bg-light">
+                class="navbar navbar-expand-sm navbar-dark bg-primary">
                 <div class="container">
-                    <Link class="navbar-brand" to="/">Books</Link>
+                    <Link class="navbar-brand" to="/">Books Library</Link>
                     <button
                         class="navbar-toggler d-lg-none"
                         type="button"
@@ -21,10 +21,10 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="collapsibleNavId">
                         <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                             <li class="nav-item">
-                                <Link class="nav-link active" href="/" aria-current="page">All</Link>
+                                <Link class="nav-link active" to="/" aria-current="page">All Books</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link" href="#">About</Link>
+                                <Link class="nav-link" to="/about">About</Link>
                             </li>
                         </ul>
                     </div>

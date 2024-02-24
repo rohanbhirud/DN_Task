@@ -1,8 +1,9 @@
 import axios from 'axios';
+const IP = "https://dn-task.onrender.com";
 
 const getAllBooks = async () => {
   try {
-    const response = await axios.get('http://localhost:9999/api/books');
+    const response = await axios.get(IP+'/api/books');
     return response.data;
   } catch (error) {
     console.error('Error fetching books:', error);
